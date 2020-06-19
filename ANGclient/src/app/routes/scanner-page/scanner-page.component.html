@@ -1,0 +1,9 @@
+<div>
+  <form [formGroup]="formData" (submit)="getProduct(formData.value)" >
+    <mat-form-field>
+    <input matInput formControlName="barcode" type="text" name="barcode" required placeholder="Saisir le code barre">
+    </mat-form-field>
+
+    <button mat-icon-button [disabled]="!formData.valid" type="submit"><mat-icon>qr_code_scanner</mat-icon></button>
+  </form>
+</div>

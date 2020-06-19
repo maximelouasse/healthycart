@@ -1,0 +1,79 @@
+mat-sidenav-content {
+  width: 100vw;
+  height: calc(100vh - 60px);
+}
+
+.mat-toolbar {
+  background-color: var(--main-color);
+  padding: 25px 10px;
+  margin: 0;
+}
+
+.mat-toolbar .mat-toolbar-row {
+  height: 26px;
+  padding: 0;
+}
+
+.mat-toolbar h1 {
+  color: #FFF;
+  font-size: 18px;
+  line-height: 21px;
+  white-space: normal !important;
+  margin-left: 40px;
+}
+
+.list-recipe {
+  width: 90%;
+  margin: 20px auto 10px;
+}
+
+.list-recipe .recipe {
+  display: inline-block;
+  width: calc((100% / 2) - 10px);
+  height: 110px;
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+.list-recipe .recipe div {
+  position: relative;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.list-recipe .recipe:nth-child(odd) {
+  margin-right: 10px;
+}
+
+.list-recipe .recipe:nth-child(even) {
+  margin-left: 10px;
+}
+
+.list-recipe .recipe p.name,
+.list-recipe .recipe p.time {
+  position: absolute;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.list-recipe .recipe p.name {
+  bottom: 40px;
+  left: 10px;
+  font-size: 14px;
+}
+
+.list-recipe .recipe p.time {
+  bottom: 10px;
+  left: 10px;
+  font-size: 8px;
+}
+
+.list-recipe .recipe p.time mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}

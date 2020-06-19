@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="'/'"><img src="../../../assets/img/list.svg" alt=""><span>Listes</span></a>
+    </li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="'/recipe'"><img src="../../../assets/img/recipe.svg" alt=""><span>Recettes</span></a>
+    </li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+      <a [routerLink]="'/product'"><img src="../../../assets/img/product.svg" alt=""><span>Produits</span></a>
+    </li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="'/profile'"><img src="../../../assets/img/profile.svg" alt=""><span>Profil</span></a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,145 @@
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <mat-toolbar *ngIf="productData" color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button>
+          <a [routerLink]="'/product'"><mat-icon>keyboard_arrow_left</mat-icon></a>
+        </button>
+        <h1>{{ productData.product_name_fr }} - {{ productData.quantity }}</h1>
+      </mat-toolbar-row>
+      <mat-toolbar-row>
+        <span>Code barre: {{ productData.code }}</span>
+      </mat-toolbar-row>
+      <mat-toolbar-row>
+        <span *ngIf="productScore">Moyenne utilisateurs: {{ productScore }} / 5</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div *ngIf="productData">
+      <div class="content_product_info">
+        <div class="product_img">
+          <img src="{{ productData.image_url }}" alt="{{ productData.product_name_fr }}">
+        </div>
+        <div class="nutriscore_img">
+          <img src="assets/img/nutriscore-{{ productData.nutrition_grades }}.svg" alt="Note nutritionnelle NutriScore : {{ productData.nutrition_grades }}">
+        </div>
+
+        <div class="clear" style="padding: 20px 0px;"></div>
+
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Ma note
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="content_section section_note">
+              <div *ngIf="userNote">
+                <span>{{ userNote }}</span>
+              </div>
+              <div *ngIf="!userNote">
+                <form [formGroup]="formData" (submit)="sendNote(formData.value)">
+                  <mat-form-field>
+                    <mat-select formControlName="note" >
+                      <mat-option [value]="1">1</mat-option>
+                      <mat-option [value]="2">2</mat-option>
+                      <mat-option [value]="3">3</mat-option>
+                      <mat-option [value]="4">4</mat-option>
+                      <mat-option [value]="5">5</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <button mat-icon-button mat-mini-fab type="submit">
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Caractéristiques du produit
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="content_section">
+              <p><span class="bold">Dénomination génératique</span>: {{ productData.product_name_fr }}</p>
+              <p><span class="bold">Quantité</span>: {{ productData.quantity }}</p>
+              <p><span class="bold">Marques</span>: {{ productData.brands }}</p>
+              <p><span class="bold">Catégories</span>: {{ productData.categories }}</p>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Défauts (pour 100g)
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="content_section">
+              <ul *ngIf="defaultList.length > 0">
+                <li *ngFor="let default of defaultList">
+                  <div class="name">
+                    <span>{{ default.text }}</span><br>{{ default.value }}
+                  </div>
+                  <div class="nutriment">
+                    <span class="nutriment_indicator {{ default.value }}"></span><span>{{ productData.nutriments[default.name] }}</span>
+                  </div>
+                </li>
+              </ul>
+              <p *ngIf="defaultList.length == 0">Aucun défaut</p>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Qualités (pour 100g)
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="content_section">
+              <ul *ngIf="qualityList.length > 0">
+                <li *ngFor="let quality of qualityList">
+                  <div class="name">
+                    <span>{{ quality.text }}</span><br>{{ quality.value }}
+                  </div>
+                  <div class="nutriment">
+                    <span class="nutriment_indicator {{ quality.value }}"></span><span>{{ productData.nutriments[quality.name] }}</span>
+                  </div>
+                </li>
+              </ul>
+              <p *ngIf="qualityList.length == 0">Aucune qualité</p>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+
+    <mat-toolbar *ngIf="userProduct" color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button>
+          <a [routerLink]="'/'"><mat-icon>keyboard_arrow_left</mat-icon></a>
+        </button>
+        <h1>Liste des produits scannée</h1>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div *ngIf="userProduct">
+      <div class="list_products">
+        <ul>
+          <li *ngFor="let product of userProduct">
+            <a routerLink="/product/{{ product.barcode }}">
+              <div class="product_img" style.background-image="url({{ product.img_url }})"></div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="scanner_button">
+        <span (click)="scannerPage()">
+          <img src="../../../assets/img/scanner.png" alt="">
+        </span>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

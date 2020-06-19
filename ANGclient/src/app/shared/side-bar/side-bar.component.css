@@ -1,0 +1,136 @@
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav,
+mat-sidenav-content {
+  padding: 16px;
+}
+
+.mat-sidenav {
+  width: 75%;
+  padding: 0;
+}
+
+.mat-sidenav .user_info {
+  background-color: var(--main-color);
+  padding: 40px 20px;
+}
+
+.mat-sidenav .user_info div {
+  display: inline-block;
+  width: 50%;
+}
+
+.mat-sidenav .user_info div:first-of-type {
+  width: 30%;
+}
+
+.mat-sidenav .user_info div:first-of-type span {
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #FFF;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 56px;
+}
+
+.mat-sidenav .user_info .user_detail {
+  text-align: center;
+  color: #FFF;
+}
+
+.mat-sidenav .user_info .user_detail span {
+  display: inline-block;
+  text-align: left;
+  font-weight: bold;
+}
+
+.mat-sidenav .user_info .user_detail span:first-of-type {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.mat-sidenav .user_info .user_detail span:nth-of-type(2) {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.mat-list-item {
+  padding: 10px 20px;
+}
+
+.mat-list-item:not(:last-child) {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.mat-list-item:last-of-type {
+  margin-top: 10px;
+}
+
+.mat-list-item .mat-line {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.mat-list-item .mat-line:first-of-type {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.mat-list-item .mat-line.quantity {
+  background-color: var(--main-color);
+  color: #FFF;
+  padding: 6px;
+  width: 40%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.mat-button .mat-button-focus-overlay {
+  background-color: transparent;
+}
+
+.mat-nav-list .mat-list-item:hover {
+  background: transparent;
+}
+
+.mat-button-focus-overlay {
+  background: none;
+}
+
+button:hover {
+  background: transparent;
+}
+
+button.btn-logout {
+  position: fixed;
+  bottom: 60px;
+  left: 20px;
+  background-color: var(--main-color);
+  color: #FFF;
+}
+
+button.new-list-button {
+  color: var(--main-color);
+}
+
+button.new-list-button mat-icon {
+  color: #FFF;
+  background-color: var(--main-color);
+  border-radius: 50%;
+}
+
+mat-form-field {
+  width: 50%;
+}

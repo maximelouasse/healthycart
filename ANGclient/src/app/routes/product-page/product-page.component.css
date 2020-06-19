@@ -1,0 +1,232 @@
+mat-sidenav-content {
+  width: 100vw;
+  height: calc(100vh - 60px);
+}
+
+.mat-toolbar {
+  background-color: var(--main-color);
+  padding: 25px 10px;
+  margin: 0;
+}
+
+.mat-toolbar .mat-toolbar-row {
+  height: 26px;
+  padding: 0;
+}
+
+.mat-toolbar .mat-toolbar-row:first-of-type {
+  margin-bottom: 5px;
+}
+
+.mat-toolbar .mat-toolbar-row:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+.mat-toolbar .mat-toolbar-row:not(:first-of-type) {
+  margin-left: 40px;
+}
+
+.mat-toolbar h1 {
+  color: #FFF;
+  font-size: 18px;
+  line-height: 21px;
+  white-space: normal !important;
+}
+
+.mat-toolbar span {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.mat-toolbar .mat-toolbar-row mat-icon {
+  color: #FFF;
+  line-height: 38px !important;
+}
+
+.list_products {
+  width: calc(100% - 40px);
+  padding: 20px 20px 0 20px;
+}
+
+.list_products ul li {
+  display: inline-block;
+  text-align: center;
+  border-radius: 10px;
+  padding: 4px;
+  color: #FFF;
+  width: calc((100% / 3) - 26px);
+  margin-right: 18px;
+  margin-bottom: 20px;
+}
+
+.list_products ul li:nth-child(3n) {
+  margin-right: 0;
+}
+
+.list_products ul li a .product_img {
+  padding-top: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.scanner_button {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+}
+
+.scanner_button span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+}
+
+.scanner_button span img {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content_product_info {
+  padding: 20px;
+  padding-bottom: 30px;
+}
+
+.content_product_info .product_img {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  width: 50%;
+}
+
+.content_product_info .product_img img {
+  width: 50%;
+}
+
+.content_product_info .nutriscore_img {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  width: 50%;
+}
+
+.content_product_info .nutriscore_img img {
+  width: 70%;
+}
+
+mat-expansion-panel {
+  margin-bottom: 20px;
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled="true"]) {
+  background-color: var(--main-color) !important;
+}
+
+.mat-expansion-panel-header.mat-expanded:focus,
+.mat-expansion-panel-header.mat-expanded:hover {
+  background-color: var(--main-color) !important;
+}
+
+mat-expansion-panel-header {
+  padding: 0px 10px;
+  background-color: var(--main-color);
+}
+
+mat-expansion-panel-header .mat-expansion-indicator::after {
+	color: rgb(255, 255, 255) !important;
+}
+
+mat-expansion-panel-header mat-panel-title {
+  font-size: 18px;
+  color: #FFF;
+}
+
+mat-expansion-panel .content_section {
+  margin-top: 10px;
+}
+
+mat-expansion-panel .content_section p {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+mat-expansion-panel .content_section.section_note {
+  text-align: center;
+}
+
+mat-expansion-panel .content_section.section_note span {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: #FFF;
+  padding: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+mat-expansion-panel .content_section.section_note button {
+  background-color: var(--main-color);
+  margin-left: 20px;
+}
+
+mat-expansion-panel .mat-expansion-panel-content > div {
+  padding: 8px;
+  background-color: #f1f2f6;
+}
+
+mat-expansion-panel ul li {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.name {
+  display: inline-block;
+  width: 75%;
+  vertical-align: middle;
+}
+
+.name span {
+  font-weight: 800;
+}
+
+.nutriment {
+  display: inline-block;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.nutriment span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nutriment .nutriment_indicator {
+  margin-right: 10px;
+}
+
+span.nutriment_indicator {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+span.nutriment_indicator.high {
+  background-color: #FF0101;
+}
+
+span.nutriment_indicator.moderate {
+  background-color: #FECB02;
+}
+
+span.nutriment_indicator.low {
+  background-color: #038141;
+}
+
+

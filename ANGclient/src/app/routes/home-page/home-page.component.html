@@ -1,0 +1,34 @@
+<mat-sidenav-container>
+  <mat-sidenav-content *ngIf="productsList" style="padding-bottom: 60px;">
+
+    <app-side-bar (listChanged)="listChangedHandler($event)" [open]="showSidenav"></app-side-bar>
+
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="toggleSidenav()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h1>{{ productsList.name }}</h1>
+      </mat-toolbar-row>
+      <mat-toolbar-row>
+        <div>
+          <form id="addProductForm" [formGroup]="formData" (submit)="addProduct(formData)">
+            <input formControlName="product" type="text" name="product" placeholder="Ajouter un produit">
+
+            <button mat-icon-button type="submit"><mat-icon>add_shopping_cart</mat-icon></button>
+          </form>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="content_products">
+      <div class="list_products">
+        <ul *ngIf="productsList.products">
+          <li *ngFor="let product of productsList.products | keyvalue" (click)="deleteProduct(product.key)">
+            <span>{{ product.value.charAt(0) }}</span><p>{{ product.value }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

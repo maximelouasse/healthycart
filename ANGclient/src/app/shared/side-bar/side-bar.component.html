@@ -1,0 +1,34 @@
+<mat-sidenav [opened]="open" mode="over">
+  <div class="user_info">
+    <div>
+      <span>M</span>
+    </div>
+
+    <div class="user_detail">
+      <span>Maxime Louasse</span>
+      <span>louasse.maxime@gmail.com</span>
+    </div>
+  </div>
+
+  <mat-nav-list *ngIf="userList">
+    <mat-list-item  *ngFor="let list of userList" (click)="changeCurrentList(list._id)">
+      <span mat-line>{{ list.name }}</span>
+      <span mat-line class="quantity">{{ list.products.length }} articles</span>
+    </mat-list-item>
+    <mat-list-item>
+      <form id="addList" [formGroup]="formData" (submit)="newList(formData)" [hidden]="hideFormNewList">
+        <mat-form-field>
+          <input matInput formControlName="name" name="name" type="text" placeholder="Nom de la liste">
+        </mat-form-field>
+        <button class="new-list-button" mat-button type="submit">
+          <mat-icon>add</mat-icon>
+        </button>
+      </form>
+      <button class="new-list-button" mat-button type="button" *ngIf="hideFormNewList" (click)="toggleForm()">
+        <mat-icon>add</mat-icon>
+        Ajouter une liste
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
+  <!--<button class="btn-logout" mat-button type="button" (click)="logout()">Déconnexion</button>-->
+</mat-sidenav>
